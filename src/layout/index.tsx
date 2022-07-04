@@ -7,7 +7,8 @@ import { Navbar, Header } from '@widgets'
 import { routes } from "./routes/routes"
 import styled from 'styled-components'
 import GlobalStyles from "../global-styles";
-
+import { Modal } from "@widgets/modal";
+import LoginPage from "@pages/login";
 
 const {Content} = Layout
 
@@ -41,31 +42,36 @@ const ContentWrapper = styled.div`
 const App = () => {
     useTheme()
 
+    const isAuthenticated = !!localStorage.getItem('token')
+
     return (
         <div style={{display: 'flex', height: '100vh'}}>
             <GlobalStyles/>
-            <Navbar visible={true}/>
-            <ContentWrapper>
-                <Header/>
-                <Content className="page-content">
-                    <Routes>
-                        <Route>
-                            {routes.map((route, key) =>
-                                RoleBasedRouting(
-                                    {
-                                        path: route.path,
-                                        component: route.component,
-                                        redirect: route.redirect,
-                                        roles: route.roles,
-                                        exact: route.exact,
-                                        key: key
-                                    }
-                                )
-                            )}
-                        </Route>
-                    </Routes>
-                </Content>
-            </ContentWrapper>
+            {isAuthenticated ? <>
+                <Navbar visible={true}/>
+                <ContentWrapper>
+                    <Header/>
+                    <Content className="page-content">
+                        <Routes>
+                            <Route>
+                                {routes.map((route, key) =>
+                                    RoleBasedRouting(
+                                        {
+                                            path: route.path,
+                                            component: route.component,
+                                            redirect: route.redirect,
+                                            roles: route.roles,
+                                            exact: route.exact,
+                                            key: key
+                                        }
+                                    )
+                                )}
+                            </Route>
+                        </Routes>
+                    </Content>
+                </ContentWrapper>
+                <Modal/>
+                </> : <LoginPage/>}
         </div>
     )
 }

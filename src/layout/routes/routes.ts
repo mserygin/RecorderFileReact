@@ -1,5 +1,7 @@
 import AddParamsPage from "@pages/add-params";
-import { GrChapterAdd } from 'react-icons/gr';
+import UploadFilePage from "@pages/upload-file";
+import { UploadOutlined, AppstoreAddOutlined, SnippetsOutlined } from "@ant-design/icons";
+import ReportsPage from "@pages/reports";
 
 
 export type RouterType = {
@@ -21,7 +23,25 @@ export const routes: RouterType[] = [
         path: "/",
         redirect: AddParamsPage,
         isNavbar: true,
-        title: "Задать параметры",
-        icon: GrChapterAdd,
+        title: "Параметры проверки",
+        icon: AppstoreAddOutlined,
+    },
+    {
+        component: UploadFilePage,
+        roles: [''],
+        path: "/upload/:hash",
+        redirect: UploadFilePage,
+        isNavbar: false,
+        title: "Загрузка файла",
+        icon: UploadOutlined,
+    },
+    {
+        component: ReportsPage,
+        roles: [''],
+        path: "/reports",
+        redirect: ReportsPage,
+        isNavbar: true,
+        title: "Отчеты",
+        icon: SnippetsOutlined,
     },
 ]

@@ -68,12 +68,6 @@ const HeaderContextMenu = () => {
         },
     ])
 
-    const logout = () => {
-        localStorage.setItem('token', '')
-        history('/')
-        window.location.reload();
-    }
-
     useEffect(() => {
         setToggles([
             {
@@ -84,12 +78,20 @@ const HeaderContextMenu = () => {
         ])
     }, [theme])
 
+    const logout = async () => {
+        await localStorage.setItem('token', '')
+        history('/')
+        window.location.reload();
+    }
+
+
     return (
         <HeaderContextMenuWrapper>
             <ToggleArea title={''} toggles={toggles} setToggles={setToggles}/>
             <Button
                 align="left"
                 icon={<FiLogOut/>}
+                onClick={logout}
                 text="Выйти"
                 width="100%"
                 background="var(--schedule)"

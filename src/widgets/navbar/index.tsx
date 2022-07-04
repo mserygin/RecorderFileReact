@@ -73,7 +73,7 @@ const Navbar: React.FC<PropsType> = ({visible}) => {
 
             <LeftsideBarWrapper height={height}>
                 <div className={style.collapsed}>
-                    <img src={} alt="Логотип"/>
+
                 </div>
                 <LeftSideBarListWrapper>
                     {routes.map(({path, isNavbar, title, icon}, key) => isNavbar && (

@@ -2,8 +2,8 @@ import { Colors } from '@shared/consts'
 import React, { useCallback, useEffect, useState } from 'react'
 import { FiEye, FiEyeOff, FiX } from 'react-icons/fi'
 import styled from 'styled-components'
-import { Title } from '@shared/ui/title'
 import { Button } from '@shared/ui/button'
+import { Title } from "@shared/ui/title";
 
 const InputWrapper = styled.div<{
     leftIcon: boolean

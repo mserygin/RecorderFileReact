@@ -1,0 +1,45 @@
+.button_suc {
+    color: red;
+}
+
+.dragger {
+    padding: 1em;
+    text-align: center;
+    color: white;
+    font-size: 18px;
+}
+
+.icon {
+    color: #567dff;
+    font-size: 48px;
+}
+
+.input_file {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.input_file + label {
+    font-size: 1.25em;
+    font-weight: 700;
+    color: white;
+    display: inline-block;
+}
+
+.input_file + label {
+    cursor: pointer;
+}
+
+.icon-file{
+    width: 50px;
+}
+
+.file_name {
+    padding: 20px;
+    /*border: 1px solid #fff;*/
+}
+

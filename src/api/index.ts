@@ -1,8 +1,7 @@
 import api from "axios"
 
 const instance = api.create({
-    baseURL: '/admin-api',
-    headers: {'Authorization': 'Bearer ' + localStorage.getItem('token')}
+    baseURL: 'http://localhost:3022',
 })
 
 class Api {
