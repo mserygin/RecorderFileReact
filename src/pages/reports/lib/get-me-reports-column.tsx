@@ -3,7 +3,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 const LinkHash = styled.a`
-  font-size: 10px;
+  font-size: 14px;
   color: var(--text);
 `
 
@@ -18,13 +18,13 @@ const getMeReportsColumn = (): ColumnProps[] => {
             title: 'Стандарт',
             align: "center",
             field: 'hash',
-            render: value => <LinkHash target="_blank" href={'http://localhost:8080/upload/' + value}>{value}</LinkHash>
+            render: value => <LinkHash target="_blank" href={'https://document-check.serygin.ru/upload/' + value}>{value}</LinkHash>
         },
         {
             title: 'Ссылка на документ',
             align: "center",
             field: 'link_document',
-            render: value => <a target="_blank" href={value}>{value.slice(35)}</a>
+            render: value => <a target="_blank" href={value}>{value.slice(52)}</a>
         },
     ]
 }

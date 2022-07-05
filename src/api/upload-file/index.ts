@@ -11,8 +11,7 @@ export const uploadFileRec = (file: File, params: FileParams): Promise<AxiosResp
 
     return axios({
         method: "post",
-        url: "http://185.17.122.164:3037/check-text/",
-        // url: "http://localhost:5000/check-text/",
+        url: "https://python-document-check.serygin.ru/check-text/",
         data: formData,
         headers: {"Content-Type": "multipart/form-data"},
     })
@@ -24,7 +23,7 @@ export const uploadFileReport = (file: File): Promise<AxiosResponse> => {
 
     return axios({
         method: "post",
-        url: "http://localhost:3022/files/upload",
+        url: "https://nest-document-check.serygin.ru/files/upload",
         data: formData,
         headers: {"Content-Type": "multipart/form-data"},
     })

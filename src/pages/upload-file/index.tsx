@@ -62,7 +62,7 @@ const UploadFilePage = observer(() => {
             if (Object.keys(listNo).length === 0) {
                 const {data} = await uploadFileReport(file)
                 setLinkReport(data.linkReport)
-                addReportRequest({standardId: hash, linkDocument: data.linkReport, studentId: 2})
+                addReportRequest({standardId: hash, linkDocument: data.linkReport, studentId: localStorage.getItem('token')})
             } else {
                 setListNotes(response.data)
             }

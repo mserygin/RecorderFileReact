@@ -73,10 +73,7 @@ export const lessLoader = {
     },
 };
 
-/**
- * Using to convert CSS modules from css-loader to TypeScript typings
- * @see https://github.com/TeamSupercell/typings-for-css-modules-loader
- */
+
 export const typingsCssModulesLoader = {
     loader: '@teamsupercell/typings-for-css-modules-loader',
     options: {
@@ -86,9 +83,6 @@ export const typingsCssModulesLoader = {
     },
 };
 
-/**
- * @see https://webpack.js.org/loaders/sass-loader/#problems-with-url
- */
 export const resolveUrlLoader = {
     loader: 'resolve-url-loader',
     options: {

@@ -12,7 +12,7 @@ const getTrackedReportsColumn = (): ColumnProps[] => {
             title: 'Ссылка на документ',
             align: "center",
             field: 'link_document',
-            render: value => <a target="_blank" href={value}>{value.slice(35)}</a>
+            render: value => <a target="_blank" href={value}>{value.slice(52)}</a>
         },
     ]
 }

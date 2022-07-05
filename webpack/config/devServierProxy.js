@@ -11,7 +11,7 @@ const httpsProxyTarget = {
 };
 
 export const devServerProxyConfig = {
-    '/admin-api': {
+    '/': {
         target: `${httpProxyTarget.protocol}://localhost:${httpProxyTarget.port}`,
         changeOrigin: true,
         secure: false,

@@ -1,7 +1,7 @@
 import api from "axios"
 
 const instance = api.create({
-    baseURL: 'http://localhost:3022',
+    baseURL: "https://nest-document-check.serygin.ru/",
 })
 
 class Api {
