@@ -13,11 +13,12 @@
     row-gap: 20px;
     column-gap: 20px;
     flex-direction: column;
-    width: 600px;
+    max-width: 600px;
+    width: 100%;
 }
 
 .item{
-    /*display: flex;*/
+    width: calc(100%);
     gap: 10px;
 }
 

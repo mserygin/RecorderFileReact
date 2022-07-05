@@ -9,6 +9,7 @@ import styled from 'styled-components'
 import GlobalStyles from "../global-styles";
 import { Modal } from "@widgets/modal";
 import LoginPage from "@pages/login";
+import useResize from "@shared/lib/hooks/use-resize";
 
 const {Content} = Layout
 
@@ -41,6 +42,7 @@ const ContentWrapper = styled.div`
 
 const App = () => {
     useTheme()
+    const { width, height } = useResize()
 
     const isAuthenticated = !!localStorage.getItem('token')
 
@@ -48,7 +50,7 @@ const App = () => {
         <div style={{display: 'flex', height: '100vh'}}>
             <GlobalStyles/>
             {isAuthenticated ? <>
-                <Navbar visible={true}/>
+            { width > 1000 && <Navbar visible={true}/>}
                 <ContentWrapper>
                     <Header/>
                     <Content className="page-content">

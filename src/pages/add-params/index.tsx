@@ -7,7 +7,7 @@ import styles from "./styles.module.css";
 import { FaRegCopy } from 'react-icons/fa'
 import { Button } from "@shared/ui/button";
 import { addVerificationParamsRequest } from "@api/verification-params";
-import { Input } from "@shared/ui/atoms";
+import { FormBlock, Input } from "@shared/ui/atoms";
 import { Title } from "@shared/ui/title";
 
 const ListAdd = styled.div`
@@ -114,19 +114,21 @@ const AddParamsPage = observer(() => {
                 </div>
             </>
             }
-            <form className={styles.items}>
-                {
-                    listParams.map(item => (
-                        <div className={styles.item}>
-                            <span className={'label-input'}>{item.label}</span>
-                            <Input placeholder={item.placeholder} inputAppearance={true} type="text" id={item.name}
-                                   value={valueForm[item.name]}
-                                   onChange={(event) => onChangeForm(item.name, event.target.value)}
-                            />
-                        </div>
-                    ))
-                }
-            </form>
+            <FormBlock>
+                <form className={styles.items}>
+                    {
+                        listParams.map(item => (
+                            <div className={styles.item}>
+                                <span className={'label-input'}>{item.label}</span>
+                                <Input placeholder={item.placeholder} inputAppearance={true} type="text" id={item.name}
+                                       value={valueForm[item.name]}
+                                       onChange={(event) => onChangeForm(item.name, event.target.value)}
+                                />
+                            </div>
+                        ))
+                    }
+                </form>
+            </FormBlock>
         </ListAdd>
     )
 

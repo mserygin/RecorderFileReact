@@ -51,7 +51,7 @@ const LoginBlock = () => {
     return (
         <LoginBlockWrapper>
             <Title size={2} align="center">
-                Вход в личный кабинет
+                Вход в систему
             </Title>
             <Message type="failure" visible={!!error}>
                 {error}
